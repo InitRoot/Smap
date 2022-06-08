@@ -18,7 +18,7 @@ func StartPair() {
 func ContinuePair(result g.Output) {
 	thisString := ""
 	for _, port := range result.Ports {
-		thisString += fmt.Sprintf("%s:%d\n", result.IP, port.Port)
+		thisString += fmt.Sprintf("%s:%d:%s\n", result.IP, port.Port, port.Service)
 	}
 	Write(thisString, g.PairFilename, openedPairFile)
 }
